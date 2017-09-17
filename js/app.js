@@ -17,7 +17,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
-    // when off canvas, reset position of enemy to move across again
+    //  reset position of enemy to move across again
     if (this.x > 500) {
         this.x = -100;
         this.speed = 100 + Math.floor(Math.random() * 300);
@@ -52,7 +52,7 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(Press) {
-
+// key should move the player selected position left, right, down, up
     if (Press === 'left') {
         (this.x -= this.speed + 40)
     } else if (Press === 'right') {
@@ -62,14 +62,6 @@ Player.prototype.handleInput = function(Press) {
         (this.y += this.speed + 20)
     } else if (Press === 'up') {
         this.y -= this.speed + 20;
-    }
-    if (this.y > 400) {
-        this.y = 400;
-    }
-
-    //start position middle
-    if (this.x > 400) {
-        this.x = 400;
     }
 
 
