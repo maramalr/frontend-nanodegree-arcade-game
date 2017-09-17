@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y, speed) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = x;
@@ -16,8 +16,8 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-     this.x += this.speed * dt;
-      // when off canvas, reset position of enemy to move across again
+    this.x += this.speed * dt;
+    // when off canvas, reset position of enemy to move across again
     if (this.x > 500) {
         this.x = -100;
         this.speed = 100 + Math.floor(Math.random() * 300);
@@ -40,22 +40,10 @@ var Player = function(x, y, speed) {
 };
 
 Player.prototype.update = function() {
-    //  player movement beyond boundaries
-    //start position down 
-    if (this.y > 400) {
-        this.y = 400;
-    }
 
-//start position middle
     if (this.x > 400) {
         this.x = 400;
-    }
-    
-
-    // Check for player reaching the water then return it to the start position down in the middle
-    if (this.y < -1) {
-        this.x = 200;
-        this.y = 400;
+        this.speed = 100 + Math.floor(Math.random() * 300);
     }
 };
 
@@ -65,19 +53,30 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(Press) {
 
-     if (Press === 'left') {
-        (this.x -= this.speed + 40) 
-    }
-    else if (Press === 'right') {
-        (this.x += this.speed +40) 
-      
-    }
-    else if (Press === 'down') {
-        (this.y += this.speed + 20) }
+    if (Press === 'left') {
+        (this.x -= this.speed + 40)
+    } else if (Press === 'right') {
+        (this.x += this.speed + 40)
 
-       
-    else if (Press === 'up') {
+    } else if (Press === 'down') {
+        (this.y += this.speed + 20)
+    } else if (Press === 'up') {
         this.y -= this.speed + 20;
+    }
+    if (this.y > 400) {
+        this.y = 400;
+    }
+
+    //start position middle
+    if (this.x > 400) {
+        this.x = 400;
+    }
+
+
+    // Check for player reaching the water then return it to the start position down in the middle
+    if (this.y < -1) {
+        this.x = 200;
+        this.y = 400;
     }
 
 };
@@ -88,7 +87,7 @@ Player.prototype.handleInput = function(Press) {
 // Place the player object in a variable called player
 // https://www.w3schools.com/js/js_function_parameters.asp
 
-var allEnemies =[new Enemy(60, 140,220/* add arguments here*/)]; 
+var allEnemies = [new Enemy(60, 140, 220 /* add arguments here*/ )];
 var player = new Player(200, 400, 50);
 
 
