@@ -11,7 +11,7 @@ Use the one of the keys " left ,right ,up ,down"  to move on the board. Once the
 Note :The enemies move in varying speeds on the block.
 
 
-**How to run this game **
+**How to run this game**
 1- Download the zip file from here [GitHub Game ](https://github.com/maramalr/frontend-nanodegree-arcade-game.git).
 2- Run the index.html file in a browser and enjoy!
 
