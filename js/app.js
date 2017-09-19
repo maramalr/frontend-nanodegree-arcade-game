@@ -76,10 +76,10 @@ var Player = function(x, y, speed) {
 
 Player.prototype.update = function() {
 
-    if (this.x > 400) {
+   /* if (this.x > 400) {
         this.x = 400;
         this.speed = 100 + Math.floor(Math.random() * 200);
-    }
+    }*/
 };
 
 Player.prototype.render = function() {
