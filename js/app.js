@@ -39,13 +39,13 @@ Enemy.prototype.collision = function() {
         y: this.y,
         width: 50,
         height: 50
-    }
+    };
     var rect2 = {
         x: player.x,
         y: player.y,
         width: 50,
         height: 50
-    }
+    };
 
     if (rect1.x < rect2.x + rect2.width &&
         rect1.x + rect1.width > rect2.x &&
@@ -54,7 +54,7 @@ Enemy.prototype.collision = function() {
         // collision detected!
         player.x = 200;
         player.y = 400;
-        console.log("collision detected")
+        console.log("collision detected");
     }
 
 };
@@ -89,12 +89,12 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(Press) {
     // key should move the player selected position left, right, down, up
     if (Press === 'left') {
-        (this.x -= this.speed + 40)
+        (this.x -= this.speed + 40);
     } else if (Press === 'right') {
-        (this.x += this.speed + 40)
+        (this.x += this.speed + 40);
 
     } else if (Press === 'down') {
-        (this.y += this.speed + 20)
+        (this.y += this.speed + 20);
     } else if (Press === 'up') {
         this.y -= this.speed + 20;
     }
